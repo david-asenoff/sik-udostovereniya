@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>SikUdostovereniya.Web</RootNamespace>
+    <!-- Хостингът е тестван с този модел: IIS препраща към Kestrel в отделен процес.
+         При publish в web.config се записва hostingModel="OutOfProcess". -->
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <!--
+    Папките на изборите живеят в главната папка на репото, за да се виждат в GitHub.
+    Оттук се включват в сайта като wwwroot/<избор>/... - при build се копират в bin/,
+    при publish - в публикуваната папка. За нов избор се добавят два реда.
+  -->
+  <ItemGroup>
+    <Content Include="..\..\2026-10-25-PVR\**" Exclude="..\..\2026-10-25-PVR\**\~$*;..\..\2026-10-25-PVR\**\*.pdf"
+             Link="wwwroot\2026-10-25-PVR\%(RecursiveDir)%(Filename)%(Extension)"
+             CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="..\..\2026-10-25-PVR.zip" Link="wwwroot\2026-10-25-PVR.zip"
+             CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
