@@ -122,3 +122,5 @@ body{
   text-align:center;font-size:13px;color:var(--muted);
 }
 .ftr a{color:var(--accent)}
+/* Подписът: собствен ред под основния; цветът е приглушеният на футъра, знакът го наследява. */
+.ftr-made{margin:10px 0 0;color:var(--muted)}
